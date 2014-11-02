@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
-<html class="no-js" lang="en" ng-app>
+<html class="no-js" lang="en" ng-app="featurecatApp">
 
 <head>
   <meta charset="utf-8">
@@ -16,13 +16,22 @@
   <link rel="stylesheet" href="css/app.css">
 
   <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
   <script src="bower_components/foundation/js/vendor/modernizr.js"></script>
 
 </head>
-<body>
+<body ng-controller="FeatureListCtrl">
 
-  <!-- body content here -->
-  <p>Nothing here {{'yet' + '!'}}</p>
+  <h1>{{heading}}</h1>
+
+  <p>Total number of features: {{features.length}}</p>
+
+  <ul>
+    <li ng-repeat="feature in features">
+      <span>{{feature.name}}</span>
+      <p>{{feature.snippet}}</p>
+    </li>
+  </ul>
 
   <script src="bower_components/foundation/js/vendor/jquery.js"></script>
   <script src="bower_components/foundation/js/foundation.min.js"></script>
